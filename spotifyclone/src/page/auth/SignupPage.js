@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SignUp = () => {
+const SignupPage = () => {
   return (
     <div className='bg-black h-20 text-white'>
       <h1>Sign Up</h1>
@@ -8,4 +8,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default SignupPage
