@@ -5,7 +5,7 @@
 
 @layer components {
   html{
-    font-family: 'Cabin', sans-serif;
+    font-family: "CircularSp";
   }
   .container{
     padding-left: 1rem;

@@ -1,11 +1,160 @@
 import React from 'react'
+import {FcGoogle} from 'react-icons/fc'
+import {BiLogoFacebookCircle} from 'react-icons/bi'
+
+// import SpotifyLogo from './LoginPage/SpotifyLogo'
+import { Select,Radio, Checkbox} from 'antd';
 
 const SignupPage = () => {
+
+  const handleChange = (value) => {
+    console.log(`selected ${value}`);
+  };
   return (
-    <div className='bg-black h-20 text-white'>
-      <h1>Sign Up</h1>
+    <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center mb-24 ">
+        {/* <img src='SpotifyLogo'/> */}
+        <img
+          src="https://assets.stickpng.com/images/5ece4ff9123d6d0004ce5f89.png "
+          className="w-36 mt-10 mb-10"
+        />
+        <h2 className=" text-center text-3xl font-bold leading-9 tracking-tight">
+          Sign up for free to start listening.
+        </h2>
+        <div class="inline-flex items-center justify-center w-full">
+          <hr class="w-full h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+          <span class="absolute px-4 font-medium text-black -translate-x-1/2 left-1/2 bg-white">
+            or
+          </span>
+        </div>
+
+        <div className="mt-10 flex flex-col items-center justify-center  text-md font-bold leading-9 tracking-tigh">
+          <a className="flex items-center border-2 px-8 py-1 rounded-full bg-[#384f81] text-white hover:scale-105 mb-2">
+            <BiLogoFacebookCircle className=" text-2xl mr-12 text-white" />
+            <p className=" mr-12">Sign up with Facebook</p>
+          </a>
+          <a className="flex items-center border-2 px-8 py-1 rounded-full border-black hover:scale-105  mb-2">
+            <FcGoogle className=" text-2xl mr-16 " />
+            <p className=" mr-12">Sign up with Google</p>
+          </a>
+        </div>
+        <h2 className=" text-center text-xl font-bold leading-9 tracking-tight my-7">
+          Sign up for free to start listening.
+        </h2>
+        <form class="w-[90%] ">
+          <label for="email" class="mb-5 w-full flex flex-col">
+            <span>What's your email?</span>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="... peer"
+              placeholder=" "
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              className="py-2 ring-1 ring-inset ring-black rounded-s"
+            />
+            <span class="mt-2  hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
+              Please enter a valid email address
+            </span>
+          </label>
+          <label for="email" class="mb-5 w-full flex flex-col">
+            <span>Create a password</span>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="... peer"
+              placeholder=" "
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              className="py-2 ring-1 ring-inset ring-black rounded-s"
+            />
+            <span class="mt-2  hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
+              Please enter a valid email address
+            </span>
+          </label>
+          <label for="email" class="mb-5 w-full flex flex-col">
+            <span>What should we call you?</span>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="... peer"
+              placeholder=" "
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              className="py-2 ring-1 ring-inset ring-black rounded-s"
+            />
+            <span class="mt-2  hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
+              Please enter a valid email address
+            </span>
+          </label>
+        </form>
+        <div className='w-[90%]'>
+          <p>What's your date of birth?</p>
+          <div className="flex justify-between items-center">
+            <div className=''>
+              <p>Day</p>
+              <input
+                placeholder="DD"
+                className=" w-20 py-2 ring-1 ring-inset ring-black rounded-s"
+              />
+            </div>
+            <div className='px-10'>
+              <p>Day</p>
+              <Select
+                defaultValue="Month"
+                style={{ width: 100 }}
+                onChange={handleChange}
+                options={[
+                  {
+                    label: "Manager",
+                    options: [
+                      { label: "Month", value: "" },
+                      { label: "January", value: "January" },
+                      { label: "February", value: "February" },
+                      { label: "March", value: "March" },
+                      { label: "April", value: "April" },
+                      { label: "May", value: "May" },
+                      { label: "June", value: "June" },
+                      { label: "July", value: "July" },
+                      { label: "August", value: "August" },
+                      { label: "September", value: "September" },
+                      { label: "October", value: "October" },
+                      { label: "November", value: "November" },
+                      { label: "December", value: "December" },
+                    ],
+                  },
+                ]}
+              />
+            </div>
+            <div className="">
+              <p>Year</p>
+              <input
+                placeholder="YYYY"
+                className=" w-20 py-2 ring-1 ring-inset ring-black rounded-s"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>What's your gender?</p>
+          <div>
+          <Radio.Group name="radiogroup" defaultValue={1}>
+            <Radio value={1}>Male</Radio>
+            <Radio value={2}>Female</Radio>
+            <Radio value={3}>Non-binary</Radio>
+            <Radio value={4}>Other</Radio>
+            <Radio value={5}>Prefer not to say</Radio>
+          </Radio.Group>
+          </div>
+        </div>
+        <Checkbox value="A">A</Checkbox>
+        <Checkbox value="A">A</Checkbox>
+      </div>
     </div>
-  )
+  );
 }
 
 export default SignupPage

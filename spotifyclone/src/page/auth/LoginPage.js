@@ -3,6 +3,7 @@ import {FcGoogle} from 'react-icons/fc'
 import {BiLogoFacebookCircle} from 'react-icons/bi'
 import {AiFillApple} from 'react-icons/ai'
 import { Switch } from 'antd';
+import {  Form, Input } from 'antd';
 
 const LoginPage = () => {
   return (
@@ -51,7 +52,7 @@ const LoginPage = () => {
                     name="email"
                     type="email"
                     autoComplete="email"
-                    placeholder='Email or username'
+                    placeholder="Email or username"
                     required
                     className="block w-full rounded-md border-0 py-1.5 bg-[#1e1e1e] text-white shadow-sm ring-1 ring-inset hover:ring-white  placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6 "
                   />
@@ -59,35 +60,37 @@ const LoginPage = () => {
               </div>
 
               <div>
-                <div className="flex items-center justify-between">
-                  <label
-                    htmlFor="password"
-                    placeholder='Password'
-                    className="block text-sm font-medium leading-6 text-white"
-                  >
-                    Password
-                  </label>
-                  <div className="text-sm">
-                    
-                  </div>
-                </div>
+                <Form.Item
+                  label="Password"
+                  name="password"
+                  
+                  rules={[
+                    {
+                      
+                      message: "Please input your password!",
+                      
+                    },
+                  ]}
+                >
+                  <Input.Password  style={{ width: "100%", backgroundColor: "#1e1e1e" }}/>
+                </Form.Item>
                 <div className="mt-2">
                   <input
                     id="password"
                     name="password"
                     type="password"
                     autoComplete="current-password"
-                    placeholder='Password'
+                    placeholder="Password"
                     required
-                   className="block w-full rounded-md border-0 py-1.5 bg-[#1e1e1e] text-white shadow-sm ring-1 ring-inset hover:ring-white  placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6 "
+                    className="block w-full rounded-md border-0 py-1.5 bg-[#1e1e1e] text-white shadow-sm ring-1 ring-inset hover:ring-white  placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6 "
                   />
                 </div>
               </div>
-                <div className='flex items-center'>
-                  <Switch size="small" defaultChecked  className='mr-5' />
-                  <p className=" text-white">Remember me</p>
-                </div>
-                
+              <div className="flex items-center">
+                <Switch size="small" defaultChecked className="mr-5" />
+                <p className=" text-white">Remember me</p>
+              </div>
+
               <div>
                 <button
                   type="submit"
@@ -97,15 +100,14 @@ const LoginPage = () => {
                 </button>
               </div>
               <a
-                      href="#"
-                      className="flex justify-center text-white underline hover:text-green-300"
-                    >
-                      Forgot password?
-                    </a>
-                    
+                href="#"
+                className="flex justify-center text-white underline hover:text-green-300"
+              >
+                Forgot password?
+              </a>
             </form>
-          <hr className=" flex justify-center mt-14 text-gray-700 border-slate-600" />
-            
+            <hr className=" flex justify-center mt-14 text-gray-700 border-slate-600" />
+
             <p className="mt-10 text-center text-sm text-gray-500">
               Don't have an account?{" "}
               <a
@@ -117,12 +119,21 @@ const LoginPage = () => {
             </p>
           </div>
         </div>
-      </div> 
+      </div>
       <footer className=" my-16">
-        <p className='text-slate-400'>This site is protected by reCAPTCHA and the Google <a href='#' className=' underline'>Privacy Policy</a> and <a href='#'className=' underline'>Terms of Service</a> apply.</p>
-    </footer>
+        <p className="text-slate-400">
+          This site is protected by reCAPTCHA and the Google{" "}
+          <a href="#" className=" underline">
+            Privacy Policy
+          </a>{" "}
+          and{" "}
+          <a href="#" className=" underline">
+            Terms of Service
+          </a>{" "}
+          apply.
+        </p>
+      </footer>
     </div>
-   
   );
 }
 
