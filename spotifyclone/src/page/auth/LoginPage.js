@@ -4,6 +4,7 @@ import {BiLogoFacebookCircle} from 'react-icons/bi'
 import {AiFillApple} from 'react-icons/ai'
 import { Switch } from 'antd';
 import {  Form, Input } from 'antd';
+import SignupPage from './SignupPage';
 
 const LoginPage = () => {
   return (
@@ -111,8 +112,8 @@ const LoginPage = () => {
             <p className="mt-10 text-center text-sm text-gray-500">
               Don't have an account?{" "}
               <a
-                href="#"
-                className="font-semibold leading-6 text-white hover:text-green-400 underline"
+                href="SignupPage"
+                className="font-semibold leading-6 text-white hover:text-green-400 underline cursor-pointer"
               >
                 Sign up for Spotify
               </a>

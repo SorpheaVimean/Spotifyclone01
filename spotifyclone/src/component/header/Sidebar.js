@@ -7,7 +7,7 @@ import {LuPlus} from "react-icons/lu"
 
 const Sidebar = () => {
   return (
-    <div className="  h-full w-[37rem] rounded-lg">
+    <div className="  h-full w-[37rem] rounded-lg ">
       <div className=" ml-5   p-6 bg-[#121212] rounded-xl" >
             <img
             src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
