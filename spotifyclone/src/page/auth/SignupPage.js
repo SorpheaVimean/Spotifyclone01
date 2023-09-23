@@ -15,7 +15,7 @@ const SignupPage = () => {
       <div className="flex flex-col justify-center items-center mb-2 ">
         {/* <img src='SpotifyLogo'/> */}
         <img
-          src="https://assets.stickpng.com/images/5ece4ff9123d6d0004ce5f89.png "
+          src="https://assets.stickpng.com/images/5ece4ff9123d6d0004ce5f89.png " alt=''
           className="w-36 mt-10 mb-10"
         />
         <h2 className=" text-center text-3xl font-bold leading-9 tracking-tight">

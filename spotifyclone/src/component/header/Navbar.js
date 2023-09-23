@@ -13,10 +13,10 @@ const Navbar = () => {
       </div>
       <div className='mr-16 text-xl '>
         <Link to={"SignupPage"}>
-          <button className=' text-lg text-slate-600 hover:text-white hover:scale-105'>Sign up</button>
+          <button className=' text-lg text-slate-600 hover:text-white hover:scale-105 transition duration-200 ease-in-out'>Sign up</button>
         </Link>
         <Link to={"LoginPage"}>
-          <button className='ml-20 text-black bg-white px-8 py-3 rounded-3xl font-bold hover:scale-105'>Log in</button>
+          <button className='ml-20 text-black bg-white px-8 py-2 rounded-3xl font-bold hover:scale-105 transition duration-200 ease-in-out'>Log in</button>
         </Link>
       </div>
       

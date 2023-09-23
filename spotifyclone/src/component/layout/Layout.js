@@ -3,8 +3,8 @@ import { Outlet } from 'react-router-dom'
 import Sidebar from '../header/Sidebar'
 import Navbar from '../header/Navbar'
 import HomePage from '../../page/home/HomePage'
-// import Footer from '../header/Footer'
-import Footer from '../header/Footer';
+import Footer from '../header/Footer'
+import FooterSignup from '../header/FooterSignup'
 
 
 
@@ -20,6 +20,8 @@ const Layout = () => {
           <Footer className=''/>
         </div>
       </div>
+      <FooterSignup/>
+      
     </div>
   );
 }

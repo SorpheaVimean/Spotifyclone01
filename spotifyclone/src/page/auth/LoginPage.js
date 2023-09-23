@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import {FcGoogle} from 'react-icons/fc'
 import {BiLogoFacebookCircle} from 'react-icons/bi'
-import {AiFillApple} from 'react-icons/ai'
+import {AiFillApple, AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'
 import { Switch } from 'antd';
 import {  Form, Input } from 'antd';
 import SignupPage from './SignupPage';
 
-import {AiOutlineEye} from 'react-icons/ai'
-import {AiOutlineEyeInvisible} from 'react-icons/ai'
+
 
 const LoginPage = () => {
 
@@ -19,9 +18,9 @@ const ShowPasswords = () =>{
     
     
     <div className=" bg-gradient-to-b from-slate-800 to-black  h-full flex flex-col   items-center">
-      <div className=" w-full h-28  bg-black text-white flex  items-center ">
+      <div className=" w-full h-28  bg-black text-white flex  items-center  " >
         <img
-          src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
+          src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png" 
           className=" w-36 ml-20 "
           alt=""
         />

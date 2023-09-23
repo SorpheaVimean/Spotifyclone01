@@ -4,6 +4,8 @@ import {AiOutlineHome} from "react-icons/ai"
 import {AiOutlineSearch} from "react-icons/ai"
 import {VscLibrary} from "react-icons/vsc"
 import {LuPlus} from "react-icons/lu"
+import {TfiWorld} from "react-icons/tfi"
+
 
 const Sidebar = () => {
   return (
@@ -25,7 +27,7 @@ const Sidebar = () => {
             <h2>Search</h2>
             </div>
       </div>
-      <div className='ml-1 h-[80%]  p-6 bg-[#121212] rounded-xl mt-2 flex justify-between flex-col  '>
+      <div className='ml-1 h-[75%]  p-6 bg-[#121212] rounded-xl mt-2 flex justify-between flex-col  '>
             <div>
                 <div className="flex justify-between text-xl   items-center text-gray-400  cursor-pointer duration-700 ">
                     <div className='flex items-center hover:text-white duration-700 '>
@@ -60,10 +62,12 @@ const Sidebar = () => {
                     <p>Accessibility</p>   
                 </div>
                 <div className='flex flex-col mt-5'>
-                <a href='#' className=' text-slate-400 text-xs hover:underline'>Cookies</a>
-                
+                    <a href='#' className=' text-slate-400 text-xs hover:underline'>Cookies</a>           
                 </div>
-               <button className=' bg-white text-black px-4 py-1 rounded-3xl my-5 hover:scale-105 ' >English</button>
+               <button className=' text-white text-sm border-2 border-slate-400  px-2 py-1 rounded-3xl my-5 hover:scale-105 flex justify-center items-center' >
+                <TfiWorld className='mr-2'/>
+                English
+               </button>
             </div>
             
 
