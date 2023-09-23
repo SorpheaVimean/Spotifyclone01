@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {FcGoogle} from 'react-icons/fc'
 import {BiLogoFacebookCircle} from 'react-icons/bi'
 import {AiFillApple} from 'react-icons/ai'
@@ -6,9 +6,19 @@ import { Switch } from 'antd';
 import {  Form, Input } from 'antd';
 import SignupPage from './SignupPage';
 
+import {AiOutlineEye} from 'react-icons/ai'
+import {AiOutlineEyeInvisible} from 'react-icons/ai'
+
 const LoginPage = () => {
+
+ const [showPass, setShowPass]= useState(false);
+const ShowPasswords = () =>{
+  setShowPass(!showPass);
+}
   return (
-    <div className=" bg-gradient-to-b from-slate-800 to-black h-full flex flex-col  items-center">
+    
+    
+    <div className=" bg-gradient-to-b from-slate-800 to-black  h-full flex flex-col   items-center">
       <div className=" w-full h-28  bg-black text-white flex  items-center ">
         <img
           src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
@@ -16,7 +26,7 @@ const LoginPage = () => {
           alt=""
         />
       </div>
-      <div className="flex justify-center items-center mt-20 bg-black w-[40%] rounded-xl">
+      <div className="flex justify-center items-center xl:mt-20 sm:mt-0 bg-black xl:w-[40%] sm:w-full xs:w-full md:w[40%]  xl:rounded-xl sm:rounded-none">
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 ">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm ">
             <h2 className="mt-10 text-center text-5xl font-bold leading-9 tracking-tight text-slate-200">
@@ -55,37 +65,31 @@ const LoginPage = () => {
                     autoComplete="email"
                     placeholder="Email or username"
                     required
-                    className="block w-full rounded-md border-0 py-1.5 bg-[#1e1e1e] text-white shadow-sm ring-1 ring-inset hover:ring-white  placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6 "
+                    className=" p-3 block w-full rounded-md border-0 py-1.5 bg-[#1e1e1e] text-white shadow-sm ring-1 ring-inset hover:ring-white  placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6 "
                   />
                 </div>
               </div>
 
-              <div>
-                <Form.Item
-                  label="Password"
-                  name="password"
-                  
-                  rules={[
-                    {
-                      
-                      message: "Please input your password!",
-                      
-                    },
-                  ]}
-                >
-                  <Input.Password  style={{ width: "100%", backgroundColor: "#1e1e1e" }}/>
-                </Form.Item>
-                <div className="mt-2">
+              <div>               
+                <div className="mt-2 relative">
                   <input
                     id="password"
                     name="password"
-                    type="password"
+                    type={ (showPass === false) ? "password" : "text" }
                     autoComplete="current-password"
                     placeholder="Password"
                     required
-                    className="block w-full rounded-md border-0 py-1.5 bg-[#1e1e1e] text-white shadow-sm ring-1 ring-inset hover:ring-white  placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6 "
+                    className=" p-3 block w-full rounded-md border-0 py-1.5 bg-[#1e1e1e] text-white shadow-sm ring-1 ring-inset hover:ring-white  placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6 "
                   />
+                  <div className='text-white text-xl absolute top-2 right-3'>
+                    {
+                      (showPass === false) ? <AiOutlineEyeInvisible onClick={ShowPasswords} /> : <AiOutlineEye  onClick={ShowPasswords} />
+                    }
+                  
+                  
+                  </div>
                 </div>
+               
               </div>
               <div className="flex items-center">
                 <Switch size="small" defaultChecked className="mr-5" />
@@ -95,7 +99,7 @@ const LoginPage = () => {
               <div>
                 <button
                   type="submit"
-                  className="flex w-full justify-center rounded-full bg-green-600 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="flex w-full justify-center rounded-full bg-green-600 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition ease-in-out"
                 >
                   Log In
                 </button>

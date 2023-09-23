@@ -5,6 +5,7 @@ import Layout from './component/layout/Layout';
 import HomePage from './page/home/HomePage';
 import LoginPage from './page/auth/LoginPage';
 import SignupPage from './page/auth/SignupPage';
+import Footer from './component/header/Footer';
 
 
 
@@ -14,7 +15,9 @@ function App() {
      <BrowserRouter>
      <Routes>
        <Route path="/" element={<Layout />}>
-         <Route path="HomePage" element={<HomePage />} />
+       <Route path="Footer" element={<Footer />} />
+       <Route path="HomePage" element={<HomePage />} />
+         
          
        
        </Route>

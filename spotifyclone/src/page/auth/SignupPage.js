@@ -23,12 +23,12 @@ const SignupPage = () => {
         </h2>
        
 
-        <div className="mt-10 flex flex-col items-center justify-center  text-md font-bold leading-9 tracking-tigh">
-          <a className="flex items-center border-2 px-8 py-1 rounded-full bg-[#384f81] text-white hover:scale-105 mb-2">
+        <div className="mt-10 flex flex-col items-center justify-center  text-md font-bold leading-9 tracking-tigh  ">
+          <a className="flex items-center border-2 px-8 py-1 rounded-full bg-[#384f81] text-white hover:scale-105 mb-2 transition ease-in-out">
             <BiLogoFacebookCircle className=" text-2xl mr-12 text-white" />
             <p className=" mr-12">Sign up with Facebook</p>
           </a>
-          <a className="flex items-center border-2 px-8 py-1 rounded-full border-black hover:scale-105  mb-2">
+          <a className="flex items-center border-2 px-8 py-1 rounded-full border-black hover:scale-105  mb-2 transition ease-in-out">
             <FcGoogle className=" text-2xl mr-16 " />
             <p className=" mr-12">Sign up with Google</p>
           </a>
@@ -162,7 +162,7 @@ const SignupPage = () => {
       <div className='flex justify-center'>
                 <button
                   type="submit"
-                  className=" font-bold flex w-44 justify-center rounded-full bg-[#1fdf64] px-3 py-5 text-sm  leading-6 text-black shadow-sm hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className=" font-bold flex w-44 justify-center rounded-full bg-[#1fdf64] px-3 py-5 text-sm  leading-6 text-black shadow-sm hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition ease-in-out"
                 >
                   Log In
                 </button>
