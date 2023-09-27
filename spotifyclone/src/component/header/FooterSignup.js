@@ -7,7 +7,7 @@ const FooterSignup = () => {
         <p>PREVIEW OF SPOTIFY</p>
         <p> Sign up to get unlimited songs and podcasts with occasional ads. No creadit card needed.</p>
       </div>
-      <button className='mr-20 text-black bg-white px-8 py-3 rounded-3xl font-bold hover:scale-105 transition duration-200 ease-in-out'>Sign up free</button>
+      <button className='mr-16 text-black bg-white px-8 py-3 rounded-3xl font-bold hover:scale-105 transition duration-200 ease-in-out'>Sign up free</button>
     </div>
   )
 }

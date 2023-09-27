@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {BsFillPlayFill} from 'react-icons/bs'
 // import Footer from '../header/Footer';
-import Footer from '../../component/header/Footer';
+// import Footer from '../../component/header/Footer';
 
 
 
@@ -13,7 +13,7 @@ const HomePage = () => {
   }
   const show = playLists.slice(0, showmore);
   return (
-    <div className='overflow-auto h-screen '>
+    <div className='  '>
       <div className=" h-full  text-black  overflow-auto ">
       <div className="flex justify-between  mb-3 text-white mx-4 mt-4 ">
         <h1 className=" font-bold text-xl hover:underline cursor-pointer">
@@ -29,7 +29,7 @@ const HomePage = () => {
             <div className='relative'>
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVAQLoc-B6lyK7t1JouIQLfPtByCInlioOvA&usqp=CAU"
-              className=" object-cover sm:h-72 xl:h-40 w-full rounded-lg "
+              className=" object-cover sm:h-[70%] xl:h-[40%] w-full rounded-lg "
               alt=''
             />
              <div className=" bg-green-600  flex justify-center items-center text-black bottom-2 right-0 mr-3   p-2 rounded-full  absolute shadow-md opacity-0  group-hover:opacity-100 translate-y-4  group-hover:translate-y-0 transition duration-200 ease-in-out">
@@ -40,9 +40,12 @@ const HomePage = () => {
             <p className=" text-gray-400 sm:text-[.6rem] xl:text-[.8rem] mt-2 xl:line-clamp-2 sm:line-clamp-0"> Zach Brytan & Kacey are Musgraves are on the top of the Hottest 50! </p>
            
           </div>
+
         ))}
+       
+
       </div>
-       <Footer/>
+       {/* <Footer/> */}
     </div>
    
     </div>
