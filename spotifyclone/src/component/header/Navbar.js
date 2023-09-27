@@ -1,15 +1,29 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import {MdKeyboardArrowLeft} from "react-icons/md"
 import {MdKeyboardArrowRight} from "react-icons/md"
+import {BiSearchAlt2} from "react-icons/bi"
 
+const Navbar = (props) => {
 
-const Navbar = () => {
   return (
     <div className='flex justify-between items-center h-16 w-full bg-[#121212] text-White  '>
-      <div className=' text-4xl flex ml-4'>
-        <MdKeyboardArrowLeft className='mr-4 bg-slate-950 rounded-full p-1'/>
-        <MdKeyboardArrowRight className=' bg-slate-950 rounded-full p-1'/>
+      <div className=' text-4xl flex ml-4 justify-between w-auto'>
+        <div className='flex'>
+          <MdKeyboardArrowLeft className='mr-4 bg-slate-950 rounded-full p-1'/>
+          <MdKeyboardArrowRight className=' bg-slate-950 rounded-full p-1'/>
+        </div>
+        { props.search && 
+           <div  className='flex items-center ml-[4%] relative text-2xl w-full   '>
+           <BiSearchAlt2 className=' absolute z-20 right-50  ml-2 hover:cursor-pointer'/>
+           
+             <input 
+           type="search"
+           placeholder='What do you want to listen to?'
+           className='   bg-[#1e1e1e]  p-1 w-full rounded-full text-[0.8rem] pl-9 pr-5 border-1 '
+           />
+       </div>
+        }
       </div>
       <div className='mr-16 text-xl '>
         <Link to={"SignupPage"}>

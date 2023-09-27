@@ -2,14 +2,19 @@ import React, {useState, useEffect, useRef} from 'react'
 import {Link} from "react-router-dom"
 import {AiOutlineHome, AiOutlineSearch} from "react-icons/ai"
 import {VscLibrary} from "react-icons/vsc"
-import {LuDivideCircle, LuPlus} from "react-icons/lu"
+import { LuPlus} from "react-icons/lu"
 import {TfiWorld} from "react-icons/tfi"
 import AddPlaylist from './AddPlaylist'
 
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+
+  useEffect(() =>{
+    props.setSearch(props.search)
+  }, [])
+
+  // Add playlists
     const [addplaylist, setAddPlaylist] = useState(false);
-   
     let useClickOutside = (handler) => {
       let menuref = useRef();
       useEffect(() => {
@@ -29,7 +34,7 @@ const Sidebar = () => {
         setAddPlaylist(false);
     })
   return (
-    <div className="  h-screen w-[37rem] rounded-lg  overflow-auto   ">
+    <div className="  h-full w-[37rem] rounded-lg     ">
       <div className=" ml-1   p-6 bg-[#121212] rounded-xl" >
             <img
             src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
@@ -42,14 +47,14 @@ const Sidebar = () => {
                 </div>
             </Link>
             
-            <Link to={"SearchPage"}>
+            <Link to={"SearchPage"} onClick = {() => props.setSearch(!props.search)} >
                 <div className="flex text-xl mt-5 items-center text-gray-400 hover:text-white cursor-pointer  duration-700">
                     <AiOutlineSearch className="mr-3 " />
                     <h2>Search</h2>
                 </div>
             </Link>
       </div>
-      <div className='ml-1 h-[75%]  p-6 bg-[#121212] rounded-xl mt-2 flex justify-between flex-col  '>
+      <div className='ml-1  h-[80%]  p-6 bg-[#121212] rounded-xl mt-2 flex justify-between flex-col  '>
             <div>
                 <div className="flex justify-between text-xl   items-center text-gray-400 duration-700 ">
                     <div className='flex items-center  cursor-pointer  hover:text-white duration-700 '>

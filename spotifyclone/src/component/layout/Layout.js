@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import Sidebar from '../header/Sidebar'
 import Navbar from '../header/Navbar'
@@ -9,15 +9,16 @@ import FooterSignup from '../header/FooterSignup'
 
 
 const Layout = () => {
+  const [search, setSearch] = useState(false);
   return (
-    <div className=" p-2 bg-black text-white flex flex-col  justify-center  ">
+    <div className=" h-screen p-2 bg-black text-white flex flex-col  justify-center  min-w-min ">
       <div className="max-w-full h-screen flex  gap-2 overflow-hidden md-[5rem]">
-        <Sidebar />
-        <div className='w-full ml-1 bg-[#1e1e1e] rounded-xl overflow-hidden '>
-          <Navbar />
+        <Sidebar className="rounded-xl h-full" search={search} setSearch={setSearch}/>
+        <div className='w-full ml-1 bg-[#1e1e1e] rounded-xl  h-full overflow-auto  '>
+          <Navbar search={search} />
           <Outlet className=" bg-[#1e1e1e] "/>
-          {/* <HomePage  className="   "/> */}
-          <Footer className=''/>
+          <HomePage  className="   "/>
+          <Footer className=' '/>
         </div>
       </div>
       <FooterSignup/>

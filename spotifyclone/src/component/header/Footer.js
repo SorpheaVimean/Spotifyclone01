@@ -4,7 +4,7 @@ import {FaXTwitter} from 'react-icons/fa6'
 import {BsFacebook} from 'react-icons/bs'
 const Footer = () => {
   return (
-    <div className=" flex flex-col mt-10 mb-20 ">
+    <div className=" flex flex-col mt-10 mb-20  '">
       <div className='text-white xl:flex justify-between '>
         <div className='ml-5 xl:flex justify-between gap-64'>
           <div className='mb-10'>
