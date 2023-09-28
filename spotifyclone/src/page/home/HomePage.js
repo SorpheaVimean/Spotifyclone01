@@ -30,7 +30,7 @@ const HomePage = () => {
         {/* Playlists Card */}
         <div className="   grid xl:gap-3 lg:gap-3 md:gap-3 sm:gap-3 xs:gap-3 grid-cols-2 md:grid-cols-4 xl:grid-cols-7 lg:grid-cols-5 sm:grid-cols-3 xs:grid-cols-2   p-5">
           {show.map(() => (
-            <div className="   bg-zinc-900 hover:bg-zinc-800 p-5 rounded-md  xl:h-full  w-fit text-white group hover:cursor-pointer">
+            <div className="  z-0  bg-zinc-900 hover:bg-zinc-800 p-5 rounded-md  xl:h-full  w-fit text-white group hover:cursor-pointer">
               <div className="relative">
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVAQLoc-B6lyK7t1JouIQLfPtByCInlioOvA&usqp=CAU"

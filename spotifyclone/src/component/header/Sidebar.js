@@ -11,7 +11,7 @@ const Sidebar = (props) => {
 
   useEffect(() =>{
     props.setSearch(props.search)
-  }, [])
+  }, [AiOutlineSearch])
 
   // Add playlists
     const [addplaylist, setAddPlaylist] = useState(false);
