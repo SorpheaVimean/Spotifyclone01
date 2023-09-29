@@ -15,8 +15,8 @@ const Layout = () => {
       <div className="h-screen flex  gap-2 overflow-hidden md-[5rem]">
         <Sidebar className="rounded-xl h-full" search={search} setSearch={setSearch}/>
         <div className='w-full ml-1 bg-[#1e1e1e] rounded-xl  h-full overflow-auto  '>
-          <Navbar search={search} className="fixed" />
-          <Outlet className=" bg-[#1e1e1e] "/>
+          <Navbar search={search} className="fixed lg:w-full" />
+          <Outlet className=" bg-[#1e1e1e] -z-10"/>
           {/* <HomePage  className="   "/> */}
           <Footer className=' '/>
         </div>

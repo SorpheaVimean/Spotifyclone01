@@ -14,7 +14,7 @@ const HomePage = () => {
   const show = playLists.slice(0, showmore);
   return (
     <div className="  ">
-      <div className="   text-black   ">
+      <div className=" z-0 text-black   ">
         <div className="flex justify-between  mb-3 text-white mx-4 mt-4 ">
           <h1 className=" font-bold text-xl hover:underline cursor-pointer">
             Spotify Playlists
@@ -30,11 +30,11 @@ const HomePage = () => {
         {/* Playlists Card */}
         <div className="   grid xl:gap-3 lg:gap-3 md:gap-3 sm:gap-3 xs:gap-3 grid-cols-2 md:grid-cols-4 xl:grid-cols-7 lg:grid-cols-5 sm:grid-cols-3 xs:grid-cols-2   p-5">
           {show.map(() => (
-            <div className="  z-0  bg-zinc-900 hover:bg-zinc-800 p-5 rounded-md  xl:h-full  w-fit text-white group hover:cursor-pointer">
-              <div className="relative">
+            <div className="   bg-zinc-900 hover:bg-zinc-800 p-5 rounded-md  xl:h-full  w-fit text-white group hover:cursor-pointer">
+              <div className="  relative ">
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVAQLoc-B6lyK7t1JouIQLfPtByCInlioOvA&usqp=CAU"
-                  className=" object-cover sm:h-[50%] xl:h-[40%] w-auto rounded-lg "
+                  className=" object-cover sm:h-[50%] xl:h-[40%] w-auto rounded-lg  -z-10 "
                   alt=""
                 />
                 <div className=" bg-green-600  flex justify-center items-center text-black bottom-2 right-0 mr-3   p-2 rounded-full  absolute shadow-md opacity-0  group-hover:opacity-100 translate-y-4  group-hover:translate-y-0 transition duration-200 ease-in-out">

@@ -9,6 +9,29 @@ import AddPlaylist from './AddPlaylist'
 
 const Sidebar = (props) => {
 
+
+  const [width, setWidth] = useState(window.innerWidth);
+  const [siderbar, setSiderbar] = useState(true);
+  // auto close when width 1024
+  useEffect(() => {
+    /* Inside of a "useEffect" hook add an event listener that updates
+       the "width" state variable when the window size changes */
+    window.addEventListener("resize", () => setWidth(window.innerWidth));
+
+    /* passing an empty array as the dependencies of the effect will cause this
+       effect to only run when the component mounts, and not each time it updates.
+       We only want the listener to be added once */
+  }, []);
+   useEffect(() =>{
+    if(width < 1024){
+      setSiderbar(false); 
+    }else{
+      setSiderbar(true)
+    }
+   })
+
+
+   // click anywhere to close add playlists
   useEffect(() =>{
     props.setSearch(props.search)
   }, [AiOutlineSearch])
@@ -34,74 +57,78 @@ const Sidebar = (props) => {
         setAddPlaylist(false);
     })
   return (
-    <div className="  h-full w-[37rem] rounded-lg     ">
-      <div className=" ml-1   p-6 bg-[#121212] rounded-xl" >
-            <img
-            src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
-            className=" w-24  " alt=''
-            />
-            <Link to={"HomePage"}>
-                <div className="flex text-xl mt-5 items-center text-gray-400 hover:text-white cursor-pointer duration-700">
-                    <AiOutlineHome className="mr-3 " />
-                    <h2>Home</h2>
-                </div>
-            </Link>
-            
-            <Link to={"SearchPage"} onClick = {() => props.setSearch(!props.search)} >
-                <div className="flex text-xl mt-5 items-center text-gray-400 hover:text-white cursor-pointer  duration-700">
-                    <AiOutlineSearch className="mr-3 " />
-                    <h2>Search</h2>
-                </div>
-            </Link>
-      </div>
-      <div className='ml-1  h-[80%]  p-6 bg-[#121212] rounded-xl mt-2 flex justify-between flex-col  '>
-            <div>
-                <div className="flex justify-between text-xl   items-center text-gray-400 duration-700 ">
-                    <div className='flex items-center  cursor-pointer  hover:text-white duration-700 '>
-                        <VscLibrary className='mr-3'/>
-                        <h2>Your Library</h2>
-                    </div> 
-                    <div ref={menuref} className=' '>
-                     <LuPlus className=' cursor-pointer  hover:text-white duration-700' title='Crate playlists or folders'  onClick={ () => setAddPlaylist(pre => !pre)}/>
-                        { addplaylist && <AddPlaylist/>}
-                    </div>              
-                </div>
-                <div className=' bg-[#1e1e1e] rounded-xl mt-5'>
-                    <div className='ml-4 pt-5'>
-                        <h3 className=' text-slate-200'>Create your first playlist</h3>
-                        <p className=' text-slate-300 text-sm mt-2 mb-8'>It's easy, we'll help you</p>
-                        <button className=' bg-white text-black px-4 py-1 rounded-3xl mb-5 hover:scale-105 ' >Create playlist</button>
-                    </div>
-                </div>
-                <div className=' bg-[#1e1e1e] rounded-xl mt-5'>
-                    <div className='ml-4 pt-5'>
-                        <h3 className=' text-slate-200'>Create your first playlist</h3>
-                        <p className=' text-slate-300 text-sm mt-2 mb-8'>It's easy, we'll help you</p>
-                        <button className=' bg-white text-black px-4 py-1 rounded-3xl mb-5 hover:scale-105 ' >Create playlist</button>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <div className='flex flex-wrap  bottom-0   gap-5 text-slate-400 text-xs'>
-                    <p>Legal</p>
-                    <p>Privacy Center</p>
-                    <p>Privacy Policy</p>
-                    <p>Cookies</p>
-                    <p>About Ads</p>
-                    <p>Accessibility</p>   
-                </div>
-                <div className='flex flex-col mt-5'>
-                    <a href='#' className=' text-slate-400 text-xs hover:underline'>Cookies</a>           
-                </div>
-               <button className=' text-white text-sm border-2 border-slate-400  px-2 py-1 rounded-3xl my-5 hover:scale-105 flex justify-center items-center' >
-                <TfiWorld className='mr-2'/>
-                English
-               </button>
-            </div>
-            
-
-      </div>
+    <div className="  h-full w-[37rem] rounded-lg tine:hidden sxs:hidden xs:hidden sm:hidden md:hidden lg:hidden xl:block ">
+      {/* { siderbar && */}
+        <div className=' h-full '>
+        <div className=" ml-1   p-6 bg-[#121212] rounded-xl" >
+              <img
+              src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
+              className=" w-24  " alt=''
+              />
+              <Link to={"HomePage"}>
+                  <div className="flex text-xl mt-5 items-center text-gray-400 hover:text-white cursor-pointer duration-700">
+                      <AiOutlineHome className="mr-3 " />
+                      <h2>Home</h2>
+                  </div>
+              </Link>
+              
+              <Link to={"SearchPage"} onClick = {() => props.setSearch(!props.search)} >
+                  <div className="flex text-xl mt-5 items-center text-gray-400 hover:text-white cursor-pointer  duration-700">
+                      <AiOutlineSearch className="mr-3 " />
+                      <h2>Search</h2>
+                  </div>
+              </Link>
+        </div>
+        <div className='ml-1  h-[82%]  p-6 bg-[#121212] rounded-xl mt-2 flex justify-between flex-col  '>
+              <div>
+                  <div className="flex justify-between text-xl   items-center text-gray-400 duration-700 ">
+                      <div className='flex items-center  cursor-pointer  hover:text-white duration-700 '>
+                          <VscLibrary className='mr-3'/>
+                          <h2>Your Library</h2>
+                      </div> 
+                      <div ref={menuref} className=' '>
+                       <LuPlus className=' cursor-pointer  hover:text-white duration-700' title='Crate playlists or folders'  onClick={ () => setAddPlaylist(pre => !pre)}/>
+                          { addplaylist && <AddPlaylist/>}
+                      </div>              
+                  </div>
+                  <div className=' bg-[#1e1e1e] rounded-xl mt-5'>
+                      <div className='ml-4 pt-5'>
+                          <h3 className=' text-slate-200'>Create your first playlist</h3>
+                          <p className=' text-slate-300 text-sm mt-2 mb-8'>It's easy, we'll help you</p>
+                          <button className=' bg-white text-black px-4 py-1 rounded-3xl mb-5 hover:scale-105 ' >Create playlist</button>
+                      </div>
+                  </div>
+                  <div className=' bg-[#1e1e1e] rounded-xl mt-5'>
+                      <div className='ml-4 pt-5'>
+                          <h3 className=' text-slate-200'>Create your first playlist</h3>
+                          <p className=' text-slate-300 text-sm mt-2 mb-8'>It's easy, we'll help you</p>
+                          <button className=' bg-white text-black px-4 py-1 rounded-3xl mb-5 hover:scale-105 ' >Create playlist</button>
+                      </div>
+                  </div>
+              </div>
+  
+              <div>
+                  <div className='flex flex-wrap  bottom-0   gap-5 text-slate-400 text-xs'>
+                      <p>Legal</p>
+                      <p>Privacy Center</p>
+                      <p>Privacy Policy</p>
+                      <p>Cookies</p>
+                      <p>About Ads</p>
+                      <p>Accessibility</p>   
+                  </div>
+                  <div className='flex flex-col mt-5'>
+                      <a href='#' className=' text-slate-400 text-xs hover:underline'>Cookies</a>           
+                  </div>
+                 <button className=' text-white text-sm border-2 border-slate-400  px-2 py-1 rounded-3xl my-5 hover:scale-105 flex justify-center items-center' >
+                  <TfiWorld className='mr-2'/>
+                  English
+                 </button>
+              </div>
+              
+  
+        </div>
+        </div>
+      {/* } */}
     </div>
   );
 }

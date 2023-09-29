@@ -8,7 +8,7 @@ import SignupPage from './page/auth/SignupPage';
 import Footer from './component/header/Footer';
 import FooterSignup from './component/header/FooterSignup';
 import SearchPage from './component/header/SearchPage';
-import MobileNavbar from './component/navbar/MobileNavbar'
+import MobileNavbar from './component/header/MobileNavbar'
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
        <Route path="MobileNavbar" element={<MobileNavbar />} />
 
        <Route path="LoginPage" element={<LoginPage />} />
-         <Route path="SignUpPage" element={<SignupPage />} />
+        <Route path="SignUpPage" element={<SignupPage />} />
      </Routes>
    </BrowserRouter>
   );

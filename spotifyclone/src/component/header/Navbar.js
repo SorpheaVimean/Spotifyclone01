@@ -3,11 +3,18 @@ import { Link, useNavigate} from 'react-router-dom'
 import {MdKeyboardArrowLeft} from "react-icons/md"
 import {MdKeyboardArrowRight} from "react-icons/md"
 import {BiSearchAlt2} from "react-icons/bi"
+import MobileNavbar from './MobileNavbar'
 
 const Navbar = (props) => {
+  const [changeNav, setChangeNave] = useState(false)
   const navigate = useNavigate();
   return (
-    <div className='flex justify-between items-center h-16 w-full bg-[#121212] text-White  z-10 '>
+    <div>
+      <div className="">
+        <MobileNavbar />
+      </div>
+       
+    <div className=' flex justify-between items-center h-16 w-full bg-[#121212] text-White   '>
       <div className=' text-4xl flex ml-4 justify-between w-auto'>
         <div className='flex'>
           <MdKeyboardArrowLeft className='mr-4 bg-slate-950 rounded-full p-1' onClick={() => navigate(-1)}/>
@@ -34,6 +41,7 @@ const Navbar = (props) => {
         </Link>
       </div>
       
+    </div>
     </div>
   )
 }
