@@ -7,7 +7,7 @@ import {TfiWorld} from "react-icons/tfi"
 import AddPlaylist from './AddPlaylist'
 
 
-const Sidebar = (props) => {
+const Sidebar = () => {
 
 
   const [width, setWidth] = useState(window.innerWidth);
@@ -33,7 +33,7 @@ const Sidebar = (props) => {
 
    // click anywhere to close add playlists
   useEffect(() =>{
-    props.setSearch(props.search)
+   
   }, [AiOutlineSearch])
 
   // Add playlists
@@ -65,14 +65,14 @@ const Sidebar = (props) => {
               src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
               className=" w-24  " alt=''
               />
-              <Link to={"HomePage"}>
+              <Link to={"/"}>
                   <div className="flex text-xl mt-5 items-center text-gray-400 hover:text-white cursor-pointer duration-700">
                       <AiOutlineHome className="mr-3 " />
                       <h2>Home</h2>
                   </div>
               </Link>
               
-              <Link to={"SearchPage"} onClick = {() => props.setSearch(!props.search)} >
+              <Link to={"SearchPage"}  >
                   <div className="flex text-xl mt-5 items-center text-gray-400 hover:text-white cursor-pointer  duration-700">
                       <AiOutlineSearch className="mr-3 " />
                       <h2>Search</h2>

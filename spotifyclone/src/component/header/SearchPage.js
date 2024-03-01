@@ -6,13 +6,13 @@ const SearchPage = () => {
   return (
 
     <div className=''>
-      <div className='flex items-center ml-[4%] relative text-2xl w-auto '>
-        <BiSearchAlt2 className=' absolute z-20 right-50  ml-2'/>
+      <div className='flex items-center m-5 relative text-2xl  '>
+        <BiSearchAlt2 className=' absolute z-10 right-50  ml-2'/>
         
           <input 
         type="search"
         placeholder='What do you want to listen to?'
-        className='   bg-black  p-1 w-[20%] rounded-full text-[0.8rem] pl-8 border-1 '
+        className=' w-[95%]  md:w-[50%] bg-black  p-1  rounded-full text-[0.8rem] pl-8 border-1 z-0 '
         />
       </div>
       <div>
